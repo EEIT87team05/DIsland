@@ -3,7 +3,7 @@
 	<Resource name="jdbc/disland" type="javax.sql.DataSource"
       username="sa" password="sa123456"
       driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-      url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=DB02"
+      url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=DB01"
       maxActive="8"
       maxIdle="4"
       maxWait="5000"
