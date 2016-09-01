@@ -27,7 +27,7 @@ public class qqqq {
 		System.out.println(" TEST 20160901 11:49");
 		
 		System.out.println("好棒棒喔");
-
+		System.out.println("REN 1203");
 
 
 	}
