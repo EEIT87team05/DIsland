@@ -11,5 +11,6 @@ public class GlobalService
 	public static final String DB_URL = "jdbc:sqlserver://" + GlobalService.host + ":1433;databaseName=JSPDB" ;	
 	public static final String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	
+	
 
 }
