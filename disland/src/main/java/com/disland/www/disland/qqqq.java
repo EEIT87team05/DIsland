@@ -11,4 +11,3 @@ public class qqqq {
 		System.out.println("123456");
 		}
 	}
-
