@@ -6,7 +6,7 @@ public class qqqq {
 		System.out.println("aaa123");
 		System.out.println("aaa123");
 		System.out.println("123");
-		
+		System.out.println("GGGG");
 	}
 
 }
