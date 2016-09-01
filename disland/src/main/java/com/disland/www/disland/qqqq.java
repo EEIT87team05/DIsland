@@ -11,6 +11,7 @@ public class qqqq {
 		System.out.println("GGGG");
 		System.out.println("你搞得我好亂啊~");
 		System.out.println("FUCK~");
+		System.out.println("f");
 	}
 
 }
