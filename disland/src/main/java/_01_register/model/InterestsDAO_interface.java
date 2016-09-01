@@ -8,4 +8,5 @@ public interface InterestsDAO_interface
 	public void update(InterestsVO interestsVO) throws SQLException;
 	public void delete(Integer interests_ID) throws SQLException;
 	public InterestsVO findByPrimaryKey(Integer interests_ID) throws SQLException;
+
 }
