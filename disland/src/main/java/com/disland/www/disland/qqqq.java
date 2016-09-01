@@ -1,6 +1,6 @@
 package com.disland.www.disland;
 
-import org.springframework.core.env.SystemEnvironmentPropertySource;
+
 
 public class qqqq {
 
@@ -10,6 +10,7 @@ public class qqqq {
 		System.out.println("123");
 		System.out.println("GGGG");
 		System.out.println("GGGG8");
+		System.out.println("EEIT87");
 
 
 		System.out.println("GGGSSSG1");
