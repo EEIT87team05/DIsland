@@ -8,6 +8,7 @@ public class qqqq {
 		System.out.println("123");
 		System.out.println("GGGG");
 		System.out.println("123456");
+		System.out.println("chichi TEST");
 	}
 
 }
