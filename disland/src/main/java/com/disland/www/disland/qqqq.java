@@ -8,6 +8,11 @@ public class qqqq {
 		System.out.println("123");
 		System.out.println("GGGG");
 		System.out.println("GGGG8");
+
+		System.out.println("GGGSSSG1");
+		System.out.println("GGGSSSG1140");
+
+		System.out.println("GGGG");
 		System.out.println("123456");
 
 		System.out.println("156165156");
@@ -15,5 +20,6 @@ public class qqqq {
 		System.out.println(" TEST 20160901 11:49");
 		System.out.println("regtghghmk");
 		}
+
 
 	}
