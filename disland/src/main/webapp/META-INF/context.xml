@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context displayName="JSP Servlet disland" docBase="disland" path="disland" reloadable="true">
+<Context antiResourceLocking="false" privileged="true" reloadable="true" crossContext="true">
 	<Resource name="jdbc/disland" type="javax.sql.DataSource"
       username="sa" password="sa123456"
       driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-      url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=DIsland"
+      url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=DB02"
       maxActive="8"
       maxIdle="4"
       maxWait="5000"
