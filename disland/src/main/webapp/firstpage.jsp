@@ -49,15 +49,11 @@
                         <a class="page-scroll" href="#about">登入</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">註冊</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">可新增</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">可新增</a>
-                    </li>
-                </ul>
+                        <a class="page-scroll" href="_01_register\register.jsp">註冊</a>
+<!--                     </li> -->
+<!-- 				<li><a class="page-scroll" href="#portfolio">可新增</a></li> -->
+<!-- 				<li><a class="page-scroll" href="#contact">可新增</a></li> -->
+		</ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
