@@ -9,7 +9,7 @@
 <!-- include 註冊頁面所需要的格式 -->
 <link rel="stylesheet" type="text/css" href="../css/register.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 
 </head>
 <body>
@@ -148,7 +148,7 @@
 	</form>
 	
 </body>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+
 <script src="../js/jquery-1.12.4.js"></script>
 <script src="../js/jquery-ui.js"></script>
 <script src="../js/jquery.twzipcode.js"></script>
