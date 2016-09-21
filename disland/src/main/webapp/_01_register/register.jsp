@@ -13,8 +13,7 @@
 
 </head>
 <body>
-	<br>
-	<h2>HerePlaceFragments</h2>
+<jsp:include page="/fragment/top.jsp"/>
 	<hr>
 	<!--
 		<form>標籤的 method屬性必須是"post", 而且enctype屬性必須是"multipart/form-data"
@@ -22,9 +21,9 @@
 
 		-->
 	<form id="RegisterForm" name="RegisterForm" method="post"
-		action="<c:url value='register.do' />" enctype="multipart/form-data">
+		action="<c:url value='register.do'  />" enctype="multipart/form-data">
 		<fieldset>
-			<legend> 個人資訊 </legend>
+			<legend> Disland_註冊頁面 </legend>
 			<table>
 				<tr>
 					<td style="text-align: right"><label for="account">E-mail(帳號):</label></td>
@@ -138,12 +137,12 @@
 					</a></td>
 				</tr>
 			
-
 			</table>
-		</fieldset>
-		<fieldset class="submit">
+			
 			<input class="submit" type="submit" value="送出" />
+			
 		</fieldset>
+		
 
 	</form>
 	

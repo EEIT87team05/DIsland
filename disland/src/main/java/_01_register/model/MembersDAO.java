@@ -78,6 +78,7 @@ public class MembersDAO implements MembersDAO_interface
 			+ "Members_RegisetTime,Members_LastLoginTime "
 			+ "FROM Members where Members_ID = ?";
 	
+	private static final String get_allmembers_stmt = "Select * from Members order by Members_ID";
 	
 	public MembersDAO() throws NamingException
 	{
@@ -759,12 +760,63 @@ public class MembersDAO implements MembersDAO_interface
 		
 		return coll;
 	}
+//======================================Leo
+	 public List<MembersVO> getAllMembersLeo(){
+	    	List<MembersVO> list = new ArrayList<MembersVO>();
+	    	MembersVO membersVO = null;
+	    	
+	    	Connection conn = null;
+	    	PreparedStatement pstmt = null;
+	    	ResultSet rs = null;
+	    	
+	    	try{
+	    		conn = ds.getConnection();
+	    		conn.setAutoCommit(false);
+	    		pstmt = conn.prepareStatement(get_allmembers_stmt);
+	    		rs = pstmt.executeQuery();
+	    		
+	    		while(rs.next()){
+	    			membersVO = new MembersVO();
+	    			membersVO.setMembers_ID(rs.getInt("members_ID"));
+	    			membersVO.setMembers_Name(rs.getString("members_Name"));
 
-//	public List<MembersVO> getAllmembersID(){
-//		List<MembersVO> list = null;
-//		
-//		
-//	}
+	    			list.add(membersVO);
+	    		}
+	    		
+	    		conn.commit();
+	    		conn.setAutoCommit(true);
+	    	}catch(SQLException e){
+	    		try{
+	    			conn.rollback();
+	    		}catch(SQLException e1){
+	    			e1.printStackTrace();
+	    		}
+	    		throw new RuntimeException("A database error occured." + e.getMessage());
+	    	}finally{
+	    		if(rs != null){
+	    			try{
+	    				rs.close();
+	    			}catch(SQLException se){
+	    				se.printStackTrace(System.err);
+	    			}
+	    		}
+	    		if(pstmt != null){
+	    			try{
+	    				pstmt.close();
+	    			}catch(SQLException se){
+	    				se.printStackTrace(System.err);
+	    			}
+	    		}
+	    		if(conn != null){
+	    			try{
+	    				conn.close();
+	    			}catch(Exception e){
+	    				e.printStackTrace(System.err);
+	    			}
+	    		}
+	    	}
+			return list;
+	    }
 	
 	
 	@Override

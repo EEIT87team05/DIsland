@@ -12,12 +12,38 @@
 <link rel="stylesheet" href="../css/animate.css">
 <c:set var="AppName" value="${SYSTEM.systemName}" scope="application" />
 <title>${AppName}</title>
-<link rel="stylesheet" type="text/css" href="../css/productList.css">
-<link rel="stylesheet" type="text/css" href="../css/grayscale.css">
+<style>
+#content{
+		position:absolute;
+		left:20%;
+		top:20%;
+}
+input[type="button"] {
+	background: #3498db;
+	/* Standard */
+	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+	background-image: -o-linear-gradient(top, #3498db, #2980b9);
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	-webkit-border-radius: 28;
+	-moz-border-radius: 28;
+	border-radius: 28px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 15px;
+	padding: 9px 20px 10px 20px;
+	text-decoration: none;
+	cursor: pointer; /*改變游標狀態*/
+}
+
+</style>
 
 </head>
 <body >
-	<div id='content'>
+<jsp:include page="/fragment/top.jsp"/>
+	<div id='content' >
 		<table border='2' width='820'>
 			<!--   購物車的標題     -->
 			<tr>
@@ -206,8 +232,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-	</div>
-	<div id="paging" style="heght:300px">
+		<div id="paging" style="heght:300px">
 		<!-- 以下為控制第一頁、前一頁、下一頁、最末頁 等超連結-->
 		<hr style="border: solid 2px pink; width: 80%; float: left;">
 		<br>
@@ -242,9 +267,13 @@
 	</div><br><br><br>
 	<hr style="border: solid 2px pink; width: 80%; ">
 	<br>
-	<a href="<c:url value='/_05_shoppingCart/ShowCartContent.jsp' />">
-		<span>結帳</span>
-	</a>
+<%-- 	<a href="<c:url value='/_05_shoppingCart/ShowCartContent.jsp' />"> --%>
+<!-- 		<span>結帳</span> -->
+<!-- 	</a> -->
+	<input type="button" value="結帳"
+	onclick=" javascript:window.location.href='../_05_shoppingCart/ShowCartContent.jsp'  ">
+	</div>
+	
 
 
 </body>

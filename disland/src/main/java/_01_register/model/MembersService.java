@@ -3,6 +3,7 @@ package _01_register.model;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.List;
 
 import javax.naming.NamingException;
 
@@ -38,5 +39,8 @@ public class MembersService
 	public Collection<MembersVO> getAllMember()
 	{
 		return dao.getAllMembers();
+	}
+	public List<MembersVO> getAllMembersLeo(){
+		return dao.getAllMembersLeo();
 	}
 }

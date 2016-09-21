@@ -52,13 +52,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a  href="#about">立即療傷</a>
+                        <a  href="${pageContext.servletContext.contextPath}/_04_product/ProductListingBookServlet">立即療傷</a>
                     </li>
                     <li>
-                        <a  href="#download">立即交友</a>
+                        <a  href="../_02_friend/friendlist.jsp">立即交友</a>
                     </li>
                     <li>
-                        <a  href="#contact">討拍</a>
+                        <a  href="../_03_board/MessageBoard_All.jsp">討拍</a>
                     </li>
                     <li>
                         <a  href="#contact">會員專區</a>

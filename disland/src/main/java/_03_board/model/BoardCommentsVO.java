@@ -1,69 +1,86 @@
 package _03_board.model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
-public class BoardCommentsVO implements java.io.Serializable
-{
-	private static final long serialVersionUID = 1L;  //沒寫不會怎樣,寫了更好
-	public BoardCommentsVO(){}  //不帶參數的建構子
+public class BoardCommentsVO implements java.io.Serializable {
+	private static final long serialVersionUID = 1L; // 沒寫不會怎樣,寫了更好
+
+	public BoardCommentsVO() {
+	} // 不帶參數的建構子
+
+	// ====================private實例變數=============================
+
+	private Integer boardComments_Id; // 1.評論版編號
+	private Integer members_Id; // 2.會員編號
+	private Integer messageBoard_Id; // 3.訊息板編號
+	private String boardComments_Content; // 4.評論版內容
+	private Integer boardComments_Reports; // 5.評論板 檢舉數
+	private Integer boardComments_Status; // 6.評論版狀態，是否被隱藏 1為隱藏 0為無隱藏
+	private Timestamp boardComments_BuildTime; // 7.評論版建構時間
+
+	// ==============================================================
+
+	// ====================getter跟setter=============================
+	// 1.評論版編號
+	public Integer getBoardComments_Id() {
+		return boardComments_Id;
+	}
+	public void setBoardComments_Id(Integer boardComments_Id) {
+		this.boardComments_Id = boardComments_Id;
+	}
+
 	
-	//====================private實例變數=============================
-	private int BoardComments_ID;
-	private int MessageBoard_ID;
-	private int BoardComments_Context;
-	private int Members_ID;
-	private int BoardComments_Status;  //貼文狀態，是否被檢舉
-	private Date BoardComments_BuildTime;
-	//==============================================================
+	// 2.會員編號
+	public Integer getMembers_Id() {
+		return members_Id;
+	}
+	public void setMembers_Id(Integer members_Id) {
+		this.members_Id = members_Id;
+	}
+	
+	
+	// 3.訊息板編號
+	public Integer getMessageBoard_Id() {
+		return messageBoard_Id;
+	}
+	public void setMessageBoard_Id(Integer messageBoard_Id) {
+		this.messageBoard_Id = messageBoard_Id;
+	}
 
-	//====================getter跟setter=============================
-	public int getBoardComments_ID()
-	{
-		return BoardComments_ID;
+	
+	// 4.評論版內容
+	public String getBoardComments_Content() {
+		return boardComments_Content;
 	}
-	public void setBoardComments_ID(int boardComments_ID)
-	{
-		BoardComments_ID = boardComments_ID;
+	public void setBoardComments_Content(String boardComments_Content) {
+		this.boardComments_Content = boardComments_Content;
 	}
-	public int getMessageBoard_ID()
-	{
-		return MessageBoard_ID;
+
+
+	// 5.評論板 檢舉數
+	public Integer getBoardComments_Reports(){
+		return boardComments_Reports;
+	}	
+	public void setBoardComments_Reports(Integer boardComments_Reports){
+		this.boardComments_Reports = boardComments_Reports;
 	}
-	public void setMessageBoard_ID(int messageBoard_ID)
-	{
-		MessageBoard_ID = messageBoard_ID;
+	
+	
+	// 6.評論版狀態，是否被隱藏 1為隱藏 0為無隱藏
+	public Integer getBoardComments_Status() {
+		return boardComments_Status;
 	}
-	public int getBoardComments_Context()
-	{
-		return BoardComments_Context;
+	public void setBoardComments_Status(Integer boardComments_Status) {
+		this.boardComments_Status = boardComments_Status;
 	}
-	public void setBoardComments_Context(int boardComments_Context)
-	{
-		BoardComments_Context = boardComments_Context;
+
+	
+	// 7.評論版建構時間
+	public Timestamp getBoardComments_BuildTime() {
+		return boardComments_BuildTime;
 	}
-	public int getMembers_ID()
-	{
-		return Members_ID;
-	}
-	public void setMembers_ID(int members_ID)
-	{
-		Members_ID = members_ID;
-	}
-	public int getBoardComments_Status()
-	{
-		return BoardComments_Status;
-	}
-	public void setBoardComments_Status(int boardComments_Status)
-	{
-		BoardComments_Status = boardComments_Status;
-	}
-	public Date getBoardComments_BuildTime()
-	{
-		return BoardComments_BuildTime;
-	}
-	public void setBoardComments_BuildTime(Date boardComments_BuildTime)
-	{
-		BoardComments_BuildTime = boardComments_BuildTime;
+	public void setBoardComments_BuildTime(Timestamp boardComments_BuildTime) {
+		this.boardComments_BuildTime = boardComments_BuildTime;
 	}
 
 }

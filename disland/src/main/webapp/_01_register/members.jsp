@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-<<<<<<< HEAD
 <jsp:useBean id="bean1" class="_01_register.model.MembersDAO" />
 <jsp:useBean id="bean2" class="_02_friend.model.FriendsListDAO" />
 <c:set var="subTitle" value="查詢會員資料(Lab05_09)" />
@@ -92,8 +91,7 @@ td{
 	<!-- Intro Header -->
 	<header class="intro">
 	<div class="intro-body">
-		<table width="960" border="0" align="center" cellpadding="0"
-			cellspacing="0">
+		<table width="960" border="0" align="center" cellpadding="0"cellspacing="0">
 			<tr valign="top">
 				<td width="260"
 					style="padding: 10px 0px 10px 0px; background: url(../img/other/background1.jpg) repeat left top">
@@ -687,6 +685,5 @@ td{
 	<!-- Theme JavaScript -->
 	<script src="../js/grayscale.min.js"></script>
 
->>>>>>> branch 'master' of https://github.com/EEIT87team05/DIsland.git
 </body>
 </html>
