@@ -39,7 +39,7 @@ public class GetImageFromDB extends HttpServlet {
 						"SELECT fileName, CoverImage from eBook where bookID = ?");
 			} else if (type.equalsIgnoreCase("MEMBER")) {  // 讀取eMember表格
 				pstmt = conn.prepareStatement(
-						"SELECT Members_MainPicture from Members where Members_ID = ?");
+						"SELECT Members_MainPicture from Members where Members_Account = ?");
 			}
 			else if (type.equalsIgnoreCase("LUCKY")) {  // 讀取eMember表格
 				pstmt = conn.prepareStatement(
@@ -48,6 +48,9 @@ public class GetImageFromDB extends HttpServlet {
 			else if (type.equalsIgnoreCase("MEMBER5")) {  // 讀取eMember表格
 				pstmt = conn.prepareStatement(
 						"SELECT Members_MainPicture from Members where members_Account = ?");
+			}else if (type.equalsIgnoreCase("MEMBER2")) {  // 讀取eMember表格
+				pstmt = conn.prepareStatement(
+						"SELECT Members_MainPicture from Members where Members_ID = ?");
 			}
 			pstmt.setString(1, id);
 			ResultSet rs = pstmt.executeQuery();

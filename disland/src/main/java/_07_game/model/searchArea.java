@@ -1,7 +1,11 @@
 package _07_game.model;
 
+import java.sql.Blob;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 public class searchArea implements java.io.Serializable
 {
@@ -15,9 +19,48 @@ public class searchArea implements java.io.Serializable
 	private String Members_Area;
 	private String Members_Gender;
 	private String Members_Job;
+	private Blob Members_MainPicture;
 	List<searchArea> result = new ArrayList<searchArea>();
+	Set<searchArea> resultset = new HashSet<searchArea>();
+	
+	public int hashCode()
+	{
+		int hash = 7;
+		hash = 47* hash + Objects.hashCode(this.Members_ID);
+		return hash;
+	}
+	
+	public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final searchArea other = (searchArea) obj;
+        if (!Objects.equals(this.Members_ID, other.Members_ID)) {
+            return false;
+        }
+        return true;
+    }
 	
 	
+	public Set<searchArea> getResultset()
+	{
+		return resultset;
+	}
+	public void setResultset(Set<searchArea> resultset)
+	{
+		this.resultset = resultset;
+	}
+	public Blob getMembers_MainPicture()
+	{
+		return Members_MainPicture;
+	}
+	public void setMembers_MainPicture(Blob members_MainPicture)
+	{
+		Members_MainPicture = members_MainPicture;
+	}
 	public String getMembers_Job()
 	{
 		return Members_Job;

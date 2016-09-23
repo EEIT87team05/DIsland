@@ -1,4 +1,4 @@
-/**
+﻿/**
  * jQuery TWzipcode plugin
  * https://code.essoduke.org/twzipcode/
  * Copyright 2016 essoduke.org, Licensed MIT.
@@ -141,7 +141,7 @@
             'readonly': false,
             'zipcodeName': 'zipcode',
             'zipcodePlaceholder': '郵遞區號',
-            'zipcodeIntoDistrict': false, // v1.6.6
+            'zipcodeIntoDistrict': true, // v1.6.6
             'googleMapsKey': '' // v1.6.9
         };
         /**

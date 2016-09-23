@@ -8,9 +8,11 @@
 <%@ page import="_01_register.model.*"%>
 
 <jsp:useBean id="bean1" class="_01_register.model.MembersDAO" />
-<jsp:useBean id="bean2" class="_08_game.model.SecondStepVO" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- <link href="../css/grayscale.css" rel="stylesheet"> -->
+<link href="<%=request.getContextPath()%>/css/flash.css"
+	rel="stylesheet">
 <title>邱比特 隨機配對1人</title>
 <style type="text/css">
 .btnR {
@@ -55,8 +57,11 @@
           
       </c:when>
 		<c:otherwise>
+			<div id="container">
+				<div id="cowboy"></div>
+				<div id="weaver"></div>
+			</div>
 			<header class="intro">
-
 			<div class="intro-body">
 				<table width="960" border="0" align="center" cellpadding="0"
 					cellspacing="0">
@@ -81,7 +86,7 @@
 															<a class="photoBiger"
 																href="http://van.ipimg.com/ialbum/34/15/80/07/7801534/photo_1472801276.jpg">
 																<img height='400px' width='300px'
-																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${fateNumber}&type=MEMBER' />
+																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${fateNumber}&type=MEMBER2' />
 															</a>
 														</div>
 
@@ -97,10 +102,10 @@
 
 								</tr>
 							</table>
-							
+
 							<table width="230" border="0" align="center" cellpadding="0"
 								cellspacing="0">
-								
+
 								<tr>
 									<td>
 										<Form
@@ -108,21 +113,21 @@
 											method="POST">
 
 
-											
-                                            <P />
+
+											<P />
 											<input type="hidden" name="id" value="${LoginOK.members_ID }">
 											<input type="hidden" name="name" value="${fateNumber}">
 											<input type="submit" value="緣點">
 
-											
+
 										</Form>
-										
+
 
 									</td>
 								</tr>
 							</table>
 
-							
+
 						</td>
 						<td>
 							<table width="230" border="0" align="center" cellpadding="0"
@@ -138,7 +143,7 @@
 														<div
 															style="position: relative; width: 250px; left: -25px; text-align: center">
 															<a class="photoBiger"
-																href="http://van.ipimg.com/ialbum/34/15/80/07/7801534/photo_1472801276.jpg">																
+																href="http://van.ipimg.com/ialbum/34/15/80/07/7801534/photo_1472801276.jpg">
 																<img height='400px' width='300px'
 																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${fateNumber2}&type=LUCKY' />
 															</a>
@@ -156,7 +161,7 @@
 
 							<table width="230" border="0" align="center" cellpadding="0"
 								cellspacing="0">
-								
+
 								<tr>
 									<td>
 										<Form
@@ -164,15 +169,15 @@
 											method="POST">
 
 
-											
-                                            <P />
+
+											<P />
 											<input type="hidden" name="id" value="${LoginOK.members_ID }">
 											<input type="hidden" name="name" value="${fateNumber2}">
 											<input type="submit" value="緣點">
 
-											
-										</Form>
-										<a href="<%=request.getContextPath()%>/_08_gameFate/fate.jsp"class="button">都沒緣分</a>
+
+										</Form> <a href="<%=request.getContextPath()%>/_08_gameFate/fate.jsp"
+										class="button">都沒緣分</a>
 
 									</td>
 								</tr>
@@ -184,9 +189,9 @@
 
 
 				</table>
-<%--                 <c:forEach var="rs" items="${bean2.details} "> --%>
-<%--                    ${rs.members_ID } --%>
-<%--                 </c:forEach> --%>
+				<%--                 <c:forEach var="rs" items="${bean2.details} "> --%>
+				<%--                    ${rs.members_ID } --%>
+				<%--                 </c:forEach> --%>
 			</div>
 			</header>
 		</c:otherwise>

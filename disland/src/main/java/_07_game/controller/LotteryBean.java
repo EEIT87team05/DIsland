@@ -34,7 +34,6 @@ public class LotteryBean {
 	    Set<Integer> set = new TreeSet<Integer>();
 	    while (set.size() < ballNumber ) {
 	    	int num = (int)(Math.random()* (upperBound-lowerBound+1) + lowerBound);
-	    	
 	    	set.add(num);
 	    }
 		return set;

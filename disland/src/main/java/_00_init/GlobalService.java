@@ -12,7 +12,7 @@ public class GlobalService
 	public static final int IMAGE_FILENAME_LENGTH = 20;
 	public static final String DB_URL = "jdbc:sqlserver://" + GlobalService.host + ":1433;databaseName=JSPDB" ;	
 	public static final String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-	public static final String SYSTEM_NAME = "D_Island 購物商城";
+	public static final String SYSTEM_NAME = "D_Island 療傷清單";
 	
 	public static String adjustFileName(String fileName, int maxLength) {
 		  int length = fileName.length();

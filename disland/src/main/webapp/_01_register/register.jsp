@@ -30,7 +30,7 @@
 					<td><input type="text" id="account" name="account"
 						placeholder="請輸入E-mail" required> <!-- value="${param.account}" -->
 						<span id="errorMsgAccount"></span>
-					<td rowspan="13"><img id="ImgShowBox" name="ImgShowBox"
+					<td rowspan="14"><img id="ImgShowBox" name="ImgShowBox"
 						style="width: 400px; height: 400px"></td>
 				</tr>
 
@@ -143,7 +143,6 @@
 			
 		</fieldset>
 		
-
 	</form>
 	
 </body>

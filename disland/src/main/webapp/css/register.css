@@ -44,7 +44,8 @@ input, select { /*針對input作修改*/
 	border: 10 none;
 	cursor: pointer; /*改變游標狀態*/
 	-webkit-border-radius: 5px;
-	width: 220px;
+	width: 250px;
+	background-color:#EBFF9C;
 }
 
 input[type="submit"] {
@@ -118,7 +119,7 @@ table {
 }
 
 table, td {
-	width: 180px;
+	width: 200px;
 }
 
 tr, td {

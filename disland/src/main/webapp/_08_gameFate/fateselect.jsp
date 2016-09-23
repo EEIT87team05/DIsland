@@ -8,7 +8,7 @@
 <%@ page import="_01_register.model.*"%>
 
 <jsp:useBean id="bean1" class="_01_register.model.MembersDAO" />
-<jsp:useBean id="bean2" class="_08_game.model.SecondStepVO" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- <link href="../css/grayscale.css" rel="stylesheet"> -->
 <title>邱比特 隨機配對1人</title>
@@ -50,19 +50,21 @@
 <body>
 	<jsp:include page="/fragment/top.jsp" />
 	<c:if test="${not empty nofate}">
-	<font> 目前尚未有人與你結緣
-	</font>
-    </c:if>
+		<script language="JavaScript">
+			window.alert("尚未有人與你結緣");
+		</script>
+		<c:redirect url="/_08_gameFate/fate.jsp" />
+	</c:if>
 	<c:choose>
 		<c:when test="${ empty bean1.allMembers1}">
           目前尚未有任何會員資料
           
           
       </c:when>
-      
+
 		<c:otherwise>
 			<header class="intro">
-            
+
 			<div class="intro-body">
 				<table width="960" border="0" align="center" cellpadding="0"
 					cellspacing="0">
@@ -87,7 +89,7 @@
 															<a class="photoBiger"
 																href="http://van.ipimg.com/ialbum/34/15/80/07/7801534/photo_1472801276.jpg">
 																<img height='400px' width='300px'
-																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${fate4[0]}&type=MEMBER' />
+																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${fate4[0]}&type=MEMBER2' />
 															</a>
 														</div>
 
@@ -103,10 +105,10 @@
 
 								</tr>
 							</table>
-							
+
 							<table width="230" border="0" align="center" cellpadding="0"
 								cellspacing="0">
-								
+
 								<tr>
 									<td>
 										<Form
@@ -114,21 +116,21 @@
 											method="POST">
 
 
-											
-                                            <P />
+
+											<P />
 											<input type="hidden" name="id" value="${LoginOK.members_ID }">
 											<input type="hidden" name="name" value="${fateNumber}">
 											<input type="submit" value="緣點">
 
-											
+
 										</Form>
-										
+
 
 									</td>
 								</tr>
 							</table>
 
-							
+
 						</td>
 						<td>
 							<table width="230" border="0" align="center" cellpadding="0"
@@ -143,9 +145,9 @@
 														style="position: relative; width: 200px; overflow: hidden">
 														<div
 															style="position: relative; width: 250px; left: -25px; text-align: center">
-															
+
 															<a class="photoBiger"
-																href="http://van.ipimg.com/ialbum/34/15/80/07/7801534/photo_1472801276.jpg">																
+																href="http://van.ipimg.com/ialbum/34/15/80/07/7801534/photo_1472801276.jpg">
 																<img height='400px' width='300px'
 																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${fate4[1]}&type=LUCKY' />
 															</a>
@@ -163,7 +165,7 @@
 
 							<table width="230" border="0" align="center" cellpadding="0"
 								cellspacing="0">
-								
+
 								<tr>
 									<td>
 										<Form
@@ -171,19 +173,16 @@
 											method="POST">
 
 
-											
-                                            <P />
+
+											<P />
 											<input type="hidden" name="id" value="${LoginOK.members_ID }">
 											<input type="hidden" name="name" value="${fateNumber2}">
 											<input type="submit" value="緣點">
 
-											
-										</Form>
-										
-									<%-- 	<c:forEach var = "fate55" items="${fate4.all} "> --%>
-                                                          
-										<a href="<%=request.getContextPath()%>/_08_gameFate/fate.jsp"class="button">都沒緣分 </a>
-                                        <%--  </c:forEach> --%>
+
+										</Form> <%-- 	<c:forEach var = "fate55" items="${fate4.all} "> --%> <a
+										href="<%=request.getContextPath()%>/_08_gameFate/fate.jsp"
+										class="button">都沒緣分 </a> <%--  </c:forEach> --%>
 									</td>
 								</tr>
 							</table>
@@ -194,14 +193,14 @@
 
 
 				</table>
-<%--                 <c:forEach var="rs" items="${bean2.details} "> --%>
-<%--                    ${rs.members_ID } --%>
-<%--                 </c:forEach> --%>
+				<%--                 <c:forEach var="rs" items="${bean2.details} "> --%>
+				<%--                    ${rs.members_ID } --%>
+				<%--                 </c:forEach> --%>
 			</div>
 			</header>
 		</c:otherwise>
 	</c:choose>
-	
+
 
 </body>
 </html>

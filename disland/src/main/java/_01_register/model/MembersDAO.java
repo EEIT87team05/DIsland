@@ -817,7 +817,45 @@ public class MembersDAO implements MembersDAO_interface
 	    	}
 			return list;
 	    }
-	
+	 public Integer getCount() throws SQLException
+		{
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String count_sql = "select count(Members_ID) AS total from Members";
+			int i = 0;
+			
+			try {
+				conn = ds.getConnection();
+				pstmt = conn.prepareStatement(count_sql);
+				rs = pstmt.executeQuery();
+				
+				while (rs.next()) {
+					i = rs.getInt("total");
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally
+			{
+				if (rs != null)
+				{
+					rs.close();
+				}
+				if (pstmt != null)
+				{
+					pstmt.close();
+				}
+				if (conn != null)
+				{
+					conn.close();
+				}
+			}
+			
+			return i;
+		}
+		
+
 	
 	@Override
 	public MembersVO findByPrimaryKey(Integer members_ID)

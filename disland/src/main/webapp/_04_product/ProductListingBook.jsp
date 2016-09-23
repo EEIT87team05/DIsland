@@ -13,12 +13,17 @@
 <c:set var="AppName" value="${SYSTEM.systemName}" scope="application" />
 <title>${AppName}</title>
 <style>
+table{
+		font-family:Microsoft JhengHei;
+		color:black;
+		
+}
 #content{
 		position:absolute;
 		left:20%;
 		top:20%;
 }
-input[type="button"] {
+input[type="button"] {/*修改結帳按鈕*/
 	background: #3498db;
 	/* Standard */
 	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -30,25 +35,49 @@ input[type="button"] {
 	-webkit-border-radius: 28;
 	-moz-border-radius: 28;
 	border-radius: 28px;
-	font-family: Arial;
-	color: #ffffff;
+	color: #FF8800;
 	font-size: 15px;
 	padding: 9px 20px 10px 20px;
 	text-decoration: none;
 	cursor: pointer; /*改變游標狀態*/
 }
-
+input[type="button"]:hover {
+	background: #fc3c73;
+	background-image: -webkit-linear-gradient(top, #fc3c73, #3498db);
+	background-image: -moz-linear-gradient(top, #fc3c73, #3498db);
+	background-image: -ms-linear-gradient(top, #fc3c73, #3498db);
+	background-image: -o-linear-gradient(top, #fc3c73, #3498db);
+	background-image: linear-gradient(to bottom, #fc3c73, #3498db);
+	text-decoration: none;
+	cursor: pointer; /*改變游標狀態*/
+}
+input { /*針對input作修改*/
+	padding: 1px 2px;
+	background: #FF8800;
+	border: 10 none;
+	cursor: pointer; /*改變游標狀態*/
+	-webkit-border-radius: 5px;
+	width: 140px;
+}
+ select { /*針對input作修改*/
+	padding: 1px 2px;
+	background: #ccc;
+	border: 10 none;
+	cursor: pointer; /*改變游標狀態*/
+	-webkit-border-radius: 5px;
+	width: 40px;
+}
 </style>
 
 </head>
 <body >
 <jsp:include page="/fragment/top.jsp"/>
 	<div id='content' >
-		<table border='2' width='820'>
+		<table  width='820'>
 			<!--   購物車的標題     -->
 			<tr>
 				<td colspan='4'>
-					<table width="820" style="background: #FFE4C4" border='0'>
+					<table width="820" style="background: #FFE4C4" >
 						<tr height='2'>
 							<th width="270">&nbsp;</th>
 							<th width="280">&nbsp;</th>
@@ -72,9 +101,9 @@ input[type="button"] {
          識別字串products_DPP是由_03_listBooks.controller.DisplayPageProducts.java放入request物件內-->
 			<c:forEach varStatus="stVar" var="aBookBean" items="${products_DPP}">
 				<!-- 用兩種顏色交替使用作為顯示商品資料的背景底色 -->
-				<c:set var="rowColor" value="#DEFADE" />
+				<c:set var="rowColor" value="#99FFFF" />
 				<c:if test="${stVar.count % 2 == 0}">
-					<c:set var="rowColor" value="#FFEBFF" />
+					<c:set var="rowColor" value="#F0BBFF" />
 				</c:if>
 				<tr bgColor="${rowColor}" height='25'>
 					<td rowspan='3' width='64'>
@@ -175,24 +204,24 @@ input[type="button"] {
 								</c:if>
 							</select>
 							<!-- 這些隱藏欄位都會送到後端 -->
-							<Input type='hidden' name='ProductListingBook_ID'
+							<input type='hidden' name='ProductListingBook_ID'
 								value='${aBookBean.productListingBook_ID}'>
 							<P />
-							<Input type='hidden' name='ProductListingBook_Name'
+							<input type='hidden' name='ProductListingBook_Name'
 								value='${aBookBean.productListingBook_Name}'>
 							<P />
-							<Input type='hidden' name='ProductListingBook_Authors'
+							<input type='hidden' name='ProductListingBook_Authors'
 								value='${aBookBean.productListingBook_Authors}'>
 							<P />
-							<Input type='hidden' name='ProductListingBook_Price'
+							<input type='hidden' name='ProductListingBook_Price'
 								value='${aBookBean.productListingBook_Price}'>
 							<P />
-							<Input type='hidden' name='ProductListingBook_Discount'
+							<input type='hidden' name='ProductListingBook_Discount'
 								value='${aBookBean.productListingBook_Discount}'>
 							<P />
-							<Input type='hidden' name='pageNo' value='${param.pageNo}'>
+							<input type='hidden' name='pageNo' value='${param.pageNo}'>
 							<P />
-							<Input type='submit' value='加入購物車'>
+							<input type='submit' value='加入購物車'>
 						</FORM>
 					</td>
 				</tr>
@@ -265,7 +294,7 @@ input[type="button"] {
 			</tr>
 		</table>
 	</div><br><br><br>
-	<hr style="border: solid 2px pink; width: 80%; ">
+
 	<br>
 <%-- 	<a href="<c:url value='/_05_shoppingCart/ShowCartContent.jsp' />"> --%>
 <!-- 		<span>結帳</span> -->
@@ -273,10 +302,7 @@ input[type="button"] {
 	<input type="button" value="結帳"
 	onclick=" javascript:window.location.href='../_05_shoppingCart/ShowCartContent.jsp'  ">
 	</div>
-	
-
 
 </body>
-
 
 </html>

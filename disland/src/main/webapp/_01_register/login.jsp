@@ -9,7 +9,8 @@
 <title>登錄</title>
 <style>
 body{
-font-family: Microsoft JhengHei
+font-family: Microsoft JhengHei;
+font-weight:bold;
 }
 input, select { /*針對input作修改*/
 	padding: 5px 15px;
@@ -17,7 +18,8 @@ input, select { /*針對input作修改*/
 	border: 10 none;
 	cursor: pointer; /*改變游標狀態*/
 	-webkit-border-radius: 5px;
-	width: 180px;
+	width: 120px;
+	
 }
 input[type="submit"] {
 	background: #3498db;
@@ -31,7 +33,6 @@ input[type="submit"] {
 	-webkit-border-radius: 28;
 	-moz-border-radius: 28;
 	border-radius: 28px;
-	font-family: Arial;
 	color: #ffffff;
 	font-size: 15px;
 	padding: 9px 20px 10px 20px;
@@ -50,28 +51,29 @@ input[type="button"] {
 	-webkit-border-radius: 28;
 	-moz-border-radius: 28;
 	border-radius: 28px;
-	font-family: Arial;
 	color: #ffffff;
 	font-size: 15px;
 	padding: 9px 20px 10px 20px;
 	text-decoration: none;
 	cursor: pointer; /*改變游標狀態*/
 }
+.loginTableStyle{
+float:right;
+margin-right:50px;
+boder-radius:5px;
+width='430'  
+}
 
 </style>
 <link rel="stylesheet" href="../css/animate.css">
+
 </head>
 <body>
 <jsp:include page="/fragment/top.jsp"/>
 <CENTER>  
-<!-- 
-<Form Action="login.do" method="POST">
- -->
- <!-- 
+
 <Form Action="<c:url value='login.do' />" method="POST">
- -->
-<Form Action="<c:url value='login.do' />" method="POST">
-	<Table width='430'  border="solid 1px red" style="float:right;margin-right:50px;" >
+	<Table class="loginTableStyle" >
          <tr>
          	<th colspan="3">
             	<h2 align="CENTER"  class="animated infinite flash">會員登入</h2>
@@ -91,8 +93,8 @@ input[type="button"] {
          
          <tr>
              <td align="RIGHT"  width='120'>密碼：</td>
-             <td align="LEFT" >
-             	<input	type="password" name="pswd"  size="10" style="background-color:#EBFF9C;">
+             <td align="LEFT"  >
+             	<input	type="password" name="pswd"  size="10" style="background-color:#EBFF9C;color:blue;">
              </td>
              <td width='120'>
              	<small>
@@ -111,13 +113,16 @@ input[type="button"] {
                <td colspan='3' align="CENTER">
          		 <input type="button" value="立即註冊"  align="center"
          		 onclick=" javascript:window.location.href='../_01_register/register.jsp' ">
+ 				<input type="submit" value="登入"> 
          	</td>
-         	 <td></td>
-             <td></td>
+         	 <td>
+         	 </td>
+             <td>
+             </td>
          </tr>
         <tr>
-            <td colspan="3" align="center">
-                  <input type="submit" value="提交">
+            <td>
+                  
             </td>
              <td></td>
              <td></td>

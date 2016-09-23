@@ -65,6 +65,7 @@ public class RegisterServlet extends HttpServlet {
 	 * static final long serialVersionUID = -8940196742313994740L;之類的。
 	 */
 	private static final long serialVersionUID = 1L;
+	private static final int Members_ID = 0;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8"); // 文字資料轉內碼
@@ -80,23 +81,27 @@ public class RegisterServlet extends HttpServlet {
 		session.setAttribute("MsgOK", msgOK); // 顯示正常訊息
 		Collection<Part> parts = request.getParts();
 		// GlobalService.exploreParts(parts, request);
-		String account = "";
-		String pwd = "";
-		String pwd_check = "";
-		String name = "";
-		String birthday = "" ;
-		String nickname = "";
-		String twzipcode = "";
-		String height= "";
-		String weight = "";
-		String job = "";
-		String relationship = "";
+		String account =  request.getParameter("account");
+		String pwd =  request.getParameter("pwd");
+		String pwd_check =  request.getParameter("pwd_check");
+		String name = request.getParameter("name");
+		String birthday =  request.getParameter("birthday");
+		String nickname =  request.getParameter("nickname");
+		String twzipcode = request.getParameter("twzipcode");
+		String height=  request.getParameter("height");
+		String weight =  request.getParameter("weight");
+		String job =  request.getParameter("job");
+		String relationship =  request.getParameter("relationship");
 		String gender = request.getParameter("gender");
+		String constellation = request.getParameter("constellation");//Members_Constellation
 		String sex = request.getParameter("sex");
-		String upload = "";
-		String fileName = "";
-		String county=request.getParameter("county");
-		String district=request.getParameter("district");
+		String upload =  request.getParameter("upload");
+		String fileName =  request.getParameter("fileName");
+		String county=request.getParameter("county");//Members_City
+		String district=request.getParameter("district");//Members_Area
+		String address=request.getParameter("address");//Members_Address
+		String introduce=request.getParameter("introduce");//Members_Itroduce
+		
 		long sizeInBytes = 0;
 		InputStream is = null;
 
@@ -207,10 +212,7 @@ public class RegisterServlet extends HttpServlet {
 					}
 					try {
 						// 4. 進行Business Logic運算
-						// RegisterServiceFile類別的功能：
-						// 1.檢查帳號是否已經存在
-						// 2.儲存會員的資料 
-						MembersVO mb = new MembersVO();
+						MembersVO mb = new MembersVO(Members_ID, account, pwd, name, gender, constellation, height, weight, county, district, relationship, job, address, introduce);
 						MembersDAO mdao = new MembersDAO();
 						mdao.insert(mb, is, sizeInBytes, fileName);
 						session.setAttribute("memberBean", mb);

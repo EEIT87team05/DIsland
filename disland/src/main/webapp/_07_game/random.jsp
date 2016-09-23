@@ -81,7 +81,7 @@
 															<a class="photoBiger"
 																href="http://van.ipimg.com/ialbum/34/15/80/07/7801534/photo_1472801276.jpg">
 																<img height='400px' width='300px'
-																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${LoginOK.members_ID}&type=MEMBER' />
+																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${LoginOK.members_ID}&type=MEMBER2' />
 															</a>
 														</div>
 
@@ -174,12 +174,86 @@
 								</tr>
 							</table>
 
+                            
+                            <table width="230" border="0" align="center" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td colspan="2"
+										style="padding: 1px 5px; background-color: black">
+										<div
+											style="margin: auto; background-color: black; border: 1px solid black; padding: 10px">
+											<table width="100%" border="0" cellpadding="2"
+												cellspacing="0">
+												<tr>
+													<td align="left" width="50%" nowrap style="font-size: 11pt"><font
+														color="white">暱 稱：</font>${luckyNumber2.members_Name}</td>
+
+												</tr>
+												<tr>
+													<td align="left" style="font-size: 11pt"><font
+														color="white">年 齡：</font> 25 歲</td>
+													<!-- 	這要記得+EL -->
+													<td align="left" colspan="2" style="font-size: 11pt"><font
+														color="white">星座：</font>${luckyNumber2.members_Constellation}</td>
+												</tr>
+												<tr>
+													<td align="left" style="font-size: 11pt"><font
+														color="white">身高：</font> ${luckyNumber2.members_Height}</td>
+													<td align="left" colspan="2" style="font-size: 11pt"><font
+														color="white">現居：</font> ${luckyNumber2.members_City}</td>
+												</tr>
+												<tr>
+													<td align="left" style="font-size: 11pt"><font
+														color="white">體 重：</font> ${luckyNumber2.members_Weight}</td>
+													<td align="left" colspan="2" style="font-size: 11pt"><font
+														color="white">地區：</font> ${luckyNumber2.members_Area}</td>
+												</tr>
+												<tr>
+
+													<td align="left" colspan="2" style="font-size: 11pt"><font
+														color="white">職 業：</font> ${luckyNumber2.members_Job}</td>
+												</tr>
+												<tr>
+													<td colspan="3" style="font-size: 11pt"></td>
+												</tr>
+											</table>
+
+
+										</div>
+
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										<Form
+											action="<c:url value='/_07_game/controller/LotteryFriendServlet.java' />"
+											method="POST">
+
+
+											<P />
+
+											<input type="hidden" name="id" value="${LoginOK.members_ID }">
+											<input type="hidden" name="name" value="${luckyNumber}">
+											<input type="submit" value="加入好友">
+
+											<P />
+										</Form>
+										<a href="<%=request.getContextPath()%>/_07_game/random-first.jsp"class="button">不喜歡</a>
+										
+
+									</td>
+								</tr>
+							</table>
+
+
+
 							<table width="230" border="0" align="center" cellpadding="0"
 								cellspacing="0">
 								
 								<tr>
 									<td>
-										<Form
+										<%-- <Form
 											action="<c:url value='/_07_game/controller/LotteryFriendServlet.java' />"
 											method="POST">
 
@@ -191,8 +265,8 @@
 											<input type="submit" value="顯示個人資料">
 
 											
-										</Form>
-										<a href="<%=request.getContextPath()%>/_07_game/random-first.jsp"class="button">不喜歡</a>
+										</Form> --%>	
+<%-- 								<a href="<%=request.getContextPath()%>/_07_game/random-first.jsp"class="button">不喜歡</a> --%>
 
 									</td>
 								</tr>

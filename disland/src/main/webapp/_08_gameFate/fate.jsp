@@ -53,7 +53,7 @@
 															<a class="photoBiger"
 																href="http://van.ipimg.com/ialbum/34/15/80/07/7801534/photo_1472801276.jpg">
 																<img height='400px' width='300px'
-																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${LoginOK.members_ID}&type=MEMBER' />
+																src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${LoginOK.members_ID}&type=MEMBER2' />
 															</a>
 														</div>
 													</div>
@@ -77,6 +77,7 @@
 							<P />
 							<input type="hidden" name="id" value="${LoginOK.members_ID }">
 							<input type="hidden" name="name" value="${LoginOK.members_Name }">
+							<input type="hidden" name="sex" value="${LoginOK.members_Sexuality }">
 							<input type="submit" value="開始緣點">
 							<P />
 						</Form>
